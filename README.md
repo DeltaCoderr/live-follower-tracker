@@ -1,3 +1,3 @@
 # live-follower-tracker
 
-test
+Just an program which tracks Live Followers of a given user in Instagram.
