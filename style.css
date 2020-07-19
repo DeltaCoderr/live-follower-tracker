@@ -1,1 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    background: #2C2B33;
+
+    font-family: 'Acumin Pro ExtraCondensed', sans-serif;
+}
+
+#followers {
+    color: #FF4754;
+
+    font-size: 4rem;
+    font-weight: 600;
+    user-select: none;
+}
