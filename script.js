@@ -12,4 +12,5 @@ async function setFollowers(profileId) {
     followers.textContent = await getFollowers(profileId);
 }
 
+//Set your Instagram username below this ▼
 setInterval(() => setFollowers(''), 1000);
