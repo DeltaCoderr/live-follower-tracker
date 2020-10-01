@@ -1,25 +1,69 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
 }
-
+a {
+	color: inherit;
+	text-decoration: underline;
+}
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-
-    background: #2C2B33;
-
-    font-family: 'Acumin Pro ExtraCondensed', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	background: #2c2b33;
+	font-family: "Acumin Pro ExtraCondensed", sans-serif;
 }
 
-#followers {
-    color: #FF4754;
+div.search {
+	display: flex;
+	justify-content: center;
+	margin: 25px 0;
+}
+#username {
+	height: 40px;
+	width: 250px;
+	padding: 0px 20px;
+	border-radius: 20px;
+	outline: none;
+}
 
-    font-size: 4rem;
-    font-weight: 600;
-    user-select: none;
+div.content {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.user {
+	display: none;
+}
+
+.username,
+.name {
+	text-align: center;
+	margin: 4px 0;
+	font-size: 18px;
+	color: white;
+	opacity: 0.8;
+}
+#followers {
+	margin-top: 25px;
+}
+.loading {
+	display: none;
+}
+.text {
+	color: white;
+	font-size: 2rem;
+}
+
+#followers,
+.loading span {
+	color: #ff4754;
+	font-size: 4rem;
+	font-weight: 600;
+	user-select: none;
 }
