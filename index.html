@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="search">
+			<form method="post" id="usernameForm">
+				<input
+					type="text"
+					name="username"
+					id="username"
+					placeholder="Username"
+				/>
+			</form>
+		</div>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <span id="followers"
-      ><center>
-        <table>
-          <td><b>Loading...</b></td>
-          <td>
-            <img
-              src="https://media.giphy.com/media/5xtDarHMbWCqUQbSjSw/giphy.gif"
-              width="70"
-              height="70"
-            />
-          </td>
-        </table></center
-    ></span>
+		<div class="content">
+			<div class="text">Enter Username above</div>
+			<div class="loading">
+				<span id="loading">Loading</span>
+				<img
+				id="loadingIcon"
+					src="https://media.giphy.com/media/5xtDarHMbWCqUQbSjSw/giphy.gif"
+					width="70"
+					height="70"
+				/>
+			</div>
+			<div class="user">
+				<p class="username">
+					Details for <a href="" class="profile"></a>
+				</p>
+				</p>
+				<p class="name">Name: </p>
+				<span id="followers">Followers</span>
+			</div>
+		</div>
 
-    <script src="script.js"></script>
-  </body>
+		<!--     
+		<span id="followers"
+			><center>
+				<table>
+					<td><b>Loading...</b></td>
+					<td>
+						<img
+							src="https://media.giphy.com/media/5xtDarHMbWCqUQbSjSw/giphy.gif"
+							width="70"
+							height="70"
+						/>
+					</td>
+				</table></center
+		></span> -->
+
+		<script src="script.js"></script>
+	</body>
 </html>

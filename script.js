@@ -1,16 +1,45 @@
-const followers = document.getElementById('followers');
+const followers = document.getElementById("followers");
 
 async function getFollowers(profileId) {
-    const url      = `https://instagram.com/${profileId}/?__a=1`;
-    const response = await fetch(url);
-    const data     = await response.json();
+	var url = `https://www.instagram.com/${profileId}`;
+	fetch;
+	const response = await fetch(url);
+	if (response.ok) {
+		const html = await response.text();
+		const stats = JSON.parse(
+			html
+				.split('<script type="application/ld+json">')[1]
+				.split("</script>")[0]
+		);
+		console.log(stats);
+		const count =
+			stats.mainEntityofPage.interactionStatistic.userInteractionCount;
 
-    return data.graphql.user.edge_followed_by.count;
+		document.getElementsByClassName("loading")[0].style.display = "none";
+		document.getElementsByClassName("user")[0].style.display = "block";
+		document.getElementById("followers").innerText = count + " Followers";
+
+		document.getElementsByClassName("profile")[0].innerText =
+			stats.alternateName;
+		document.getElementsByClassName("profile")[0].href = url;
+		document.getElementsByClassName("name")[0].innerText =
+			"Name: " + stats.name;
+	} else {
+		if (response.status === 404) {
+			document.getElementById("loadingIcon").style.display = "none";
+			document.getElementById("loading").innerText = "User not found";
+		} else {
+			console.log(response);
+			alert("Some error occured");
+		}
+	}
 }
 
-async function setFollowers(profileId) {
-    followers.textContent = await getFollowers(profileId);
-}
-
-//Set your Instagram username below this ▼
-setInterval(() => setFollowers(''), 1000);
+document.getElementById("usernameForm").addEventListener("submit", (e) => {
+	e.preventDefault();
+	const username = document.getElementById("username").value;
+	document.getElementsByClassName("user")[0].style.display = "none";
+	document.getElementsByClassName("text")[0].style.display = "none";
+	document.getElementsByClassName("loading")[0].style.display = "block";
+	getFollowers(username);
+});
