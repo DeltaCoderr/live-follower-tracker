@@ -26,7 +26,8 @@ async function getFollowers(profileId) {
 			"Name: " + stats.name;
 	} else {
 		if (response.status === 404) {
-			alert("User not found");
+			document.getElementById("loadingIcon").style.display = "none";
+			document.getElementById("loading").innerText = "User not found";
 		} else {
 			console.log(response);
 			alert("Some error occured");
@@ -37,6 +38,7 @@ async function getFollowers(profileId) {
 document.getElementById("usernameForm").addEventListener("submit", (e) => {
 	e.preventDefault();
 	const username = document.getElementById("username").value;
+	document.getElementsByClassName("user")[0].style.display = "none";
 	document.getElementsByClassName("text")[0].style.display = "none";
 	document.getElementsByClassName("loading")[0].style.display = "block";
 	getFollowers(username);
